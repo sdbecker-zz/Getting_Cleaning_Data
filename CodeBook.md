@@ -32,7 +32,7 @@ study. The activities are named _LAYING_, _SITTING_, _STANDING_, _WALKING_,
  _WALKING\_DOWNSTAIRS_, _WALKING\_UPSTAIRS_.
  
 The above 36 records fall under the first field _Group_. Therefore the data set
-relates 67 averaged values to either a volunteer or an activity.
+relates 66 averaged values to either a volunteer or an activity.
 
 ### Column fields:
 
