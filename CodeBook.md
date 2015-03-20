@@ -44,6 +44,10 @@ to which the remaining calculated fields relate.
 For instance _tBodyAcc.std (X,Y,Z): [Columns 2-4]_ are averages of tBodyAcc.std
 taken over the three axials X,Y and Z and shown in columns 2,3 and 4.
 
+The units are all normalised time values if the variable starts with 't', or
+it is a normalised frequency value if the variable starts with 'f'. Note the
+values are normalized between (-1,1).
+
 * tBodyAcc.std (X,Y,Z): [Columns 2-4]
 * tGravityAcc.std (X,Y,Z) : [Columns 5-7]
 * tBodyAccJerk.std (X,Y,Z) : [Columns 8-10]
@@ -80,6 +84,27 @@ taken over the three axials X,Y and Z and shown in columns 2,3 and 4.
 * fBodyBodyGyroJerkMag.mean : [Column 67]
 
 ## 3. Explanation of the script
+
+The first step is combining the testing and training data, this means one must
+combine the files of the activities and volunteers together with the calculated
+fields. 
+
+The second step is to extract all the fields with standard deviation or mean 
+calculations. Thus extract fields containing _'mean'_ or _'std'_ in the name.
+Note that the fields containing _'bandenergy'_ are duplicates and not required
+for the project so they are identified and deleted from the data set first.
+
+The third step is to use factors to rename the activities field from numbers 
+to descriptive names. Over and above that the names for the subjects were 
+replaced with names such as _'Volunteer\_1'_.
+
+The fourth step which was inherently done in step two was to give the remaining
+fields back their descriptive names.
+
+The fifth step was to created the second tidy data set with the averaged values
+for each variable with respect to each volunteer/subject and each activity.
+This was done separately first and then combined and written out to the file,
+__run\_analysis\_output.txt__.
 
 
 
